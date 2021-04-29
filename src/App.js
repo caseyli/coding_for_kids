@@ -21,49 +21,66 @@ function App() {
   const rows = [0, 1, 2, 3];
   const columns = [0, 1, 2, 3];
 
-  function moveUp() {
+  /* Using underscore because it's easier for those who don't code to read */
+  function move_yoda_up() {
     if(playerRow !== 0) {
       setPlayerRow((prevPlayerRow) => prevPlayerRow - 1);
     }
   }
 
-  function moveDown() {
+  function move_yoda_down() {
     if(playerRow !== 3) {
       setPlayerRow((prevPlayerRow) => prevPlayerRow + 1);
     }
   }
 
-  function moveLeft() {
+  function move_yoda_left() {
     if(playerCol !== 0) {
       setPlayerCol((prevPlayerCol) => prevPlayerCol - 1);
     }
   }
 
-  function moveRight() {
+  function move_yoda_right() {
     if(playerCol !== 3) {
       setPlayerCol((prevPlayerCol) => prevPlayerCol + 1);
     }
   }
 
-  function handleUpClick(e) {
-    e.preventDefault();
-    moveUp();
+  /* ---------------------------------------------------------------------------------------
+   * TEACHING SECTION: Fill in what you want yoda to do when various buttons are clicked 
+   * ---------------------------------------------------------------------------------------
+   * options: 
+     - move_yoda_up();
+     - move_yoda_down();
+     - move_yoda_left();
+     - move_yoda_right();
+  */
+
+
+  function when_you_press_the_down_button() {
+    /* What do you want yoda to do when you press the up button? */
+  }
+  
+  function when_you_press_the_right_button() {
+    /* What do you want yoda to do when you press the up button? */
   }
 
-  function handleDownClick(e) {
-    e.preventDefault();
-    moveDown();
+  function when_you_press_the_up_button() {
+    /* What do you want yoda to do when you press the up button? */
   }
 
-  function handleLeftClick(e) {
-    e.preventDefault();
-    moveLeft();
+  function when_you_press_the_left_button() {
+    /* What do you want yoda to do when you press the up button? */
+    /* There's a problem here, let's fix it */
+    move_yoda_down();
   }
 
-  function handleRightClick(e) {
-    e.preventDefault();
-    moveRight();
-  }
+
+
+  /* ------------------------------------------------------------------------------------------
+   * End of Teaching section 
+   * ------------------------------------------------------------------------------------------
+   */
 
   return (
     <div className="app">
@@ -105,17 +122,17 @@ function App() {
         <div className='control-grid'>
           <div className='control-row'>
             <div className='control-button-spacer'></div>
-            <a onClick={handleUpClick} className='control-button'><img src={arrowUp} /></a>
+            <a onClick={(e) => { e.preventDefault(); when_you_press_the_up_button()} } className='control-button'><img src={arrowUp} /></a>
             <div className='control-button-spacer'></div>
           </div>
           <div className='control-row'>
-            <a onClick={handleLeftClick} className='control-button'><img src={arrowLeft} /></a>
+            <a onClick={(e) => { e.preventDefault(); when_you_press_the_left_button()} } className='control-button'><img src={arrowLeft} /></a>
             <div className='control-button-spacer'></div>
-            <a onClick={handleRightClick} className='control-button'><img src={arrowRight} /></a>
+            <a onClick={(e) => { e.preventDefault(); when_you_press_the_right_button()} } className='control-button'><img src={arrowRight} /></a>
           </div>
           <div className='control-row'>
           <div className='control-button-spacer'></div>
-            <a onClick={handleDownClick} className='control-button'><img src={arrowDown} /></a>
+            <a onClick={(e) => { e.preventDefault(); when_you_press_the_down_button()} } className='control-button'><img src={arrowDown} /></a>
             <div className='control-button-spacer'></div>
           </div>
         </div>
